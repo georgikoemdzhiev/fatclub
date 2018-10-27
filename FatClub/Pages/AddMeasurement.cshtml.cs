@@ -26,7 +26,8 @@ namespace FatClub.Pages
             return Page();
         }
 
-        [BindProperty] public Measurement Measurement { get; set; }
+        [BindProperty]
+        public Measurement Measurement { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {

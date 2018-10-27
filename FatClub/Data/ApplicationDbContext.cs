@@ -13,6 +13,16 @@ namespace FatClub.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+//            builder.Entity<Measurement>(m =>
+//            {
+//                m.HasMany<IdentityUs>()
+//            })
+        }
+
         public DbSet<Measurement> Measurement { get; set; }
     }
 }
