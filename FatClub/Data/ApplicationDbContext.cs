@@ -12,5 +12,7 @@ namespace FatClub.Data
             : base(options)
         {
         }
+
+        public DbSet<Measurement> Measurement { get; set; }
     }
 }
