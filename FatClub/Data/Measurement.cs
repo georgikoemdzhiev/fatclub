@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
@@ -9,7 +10,7 @@ namespace FatClub.Data
         [Key]
         public int Id { get; set; }
 
-        public IdentityUser User { get; set; }
+        public ApplicationUser User { get; set; }
         [Range(30.0, 200.0)]
         public double Weight { get; set; }
 

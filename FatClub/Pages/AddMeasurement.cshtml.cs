@@ -13,9 +13,9 @@ namespace FatClub.Pages
     public class AddMeasurementModel : PageModel
     {
         private readonly FatClub.Data.ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public AddMeasurementModel(FatClub.Data.ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public AddMeasurementModel(FatClub.Data.ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _userManager = userManager;
