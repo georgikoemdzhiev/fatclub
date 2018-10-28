@@ -19,10 +19,13 @@ namespace FatClub.Pages
         }
         public void OnGet()
         {
-            Measurements = _context.Measurement.Include(x => x.User).ToList();
+            Measurements = _context.Measurement.Include(x => x.User).OrderByDescending(x => x.MeasureDate).ToList();
+            Users = _context.Users.ToList();
         }
 
         [BindProperty]
         public List<Measurement> Measurements { get; set; }
+        [BindProperty]
+        public List<ApplicationUser> Users { get; set; }
     }
 }

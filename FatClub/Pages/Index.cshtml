@@ -4,17 +4,26 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="jumbotron">
-    <h1>Measurements</h1>
-    
-    @foreach (var m in Model.Measurements)
-    {
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h5>User: @m.User?.Name</h5>
-                <h5>Weight: @m.Weight kg</h5>
-                <h5>Date: @m.MeasureDate.ToString("dd / MM / yyyy")</h5>
+<div class="row">
+    <div id="user_panel" class="col-md-2">
+        <ul class="list-group">
+            @foreach (var u in Model.Users)
+            {
+                <li class="list-group-item"><a asp-page="UserInfo" asp-route-userid="@u.Id">@u.Name</a></li>
+            }
+        </ul>
+    </div>
+    <div id="user_panel" class="jumbotron col-md-10">
+        <h1>Measurements</h1>
+        @foreach (var m in Model.Measurements)
+        {
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5>User: @m.User?.Name</h5>
+                    <h5>Weight: @m.Weight kg</h5>
+                    <h5>Date: @m.MeasureDate.ToString("dd / MM / yyyy")</h5>
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>

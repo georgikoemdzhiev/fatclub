@@ -14,5 +14,6 @@ namespace FatClub.Data
         }
 
         public DbSet<Measurement> Measurement { get; set; }
+        public new DbSet<ApplicationUser> Users { get; set; }
     }
 }

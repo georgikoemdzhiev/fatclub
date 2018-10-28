@@ -1,0 +1,20 @@
+﻿@page "{userId}"
+@model FatClub.Pages.UserInfoModel
+@{
+    ViewData["Title"] = "UserInfo";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h4>@Model.User.Name's Measurements</h4>
+
+    @foreach (var m in Model.UserMeasurements)
+    {
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h5>Weight: @m.Weight kg</h5>
+                <h5>Date: @m.MeasureDate.ToString("dd / MM / yyyy")</h5>
+            </div>
+        </div>
+    }
+</div>

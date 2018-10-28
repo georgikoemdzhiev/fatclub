@@ -35,8 +35,8 @@ namespace FatClub
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("Azure")));
-//                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+//                options.UseSqlServer(Configuration.GetConnectionString("Azure")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
