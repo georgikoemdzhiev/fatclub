@@ -9,5 +9,7 @@ namespace FatClub.Data
     public class ApplicationUser : IdentityUser
     {
         public string Name { get; set; }
+        public double Weight { get; set; } = 0.0;
+        public double Height { get; set; } = 0.0;
     }
 }

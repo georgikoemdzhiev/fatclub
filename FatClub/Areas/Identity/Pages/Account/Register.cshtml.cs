@@ -59,6 +59,11 @@ namespace FatClub.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            public double Weight { get; set; }
+            [Required]
+            public double Height { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -71,7 +76,15 @@ namespace FatClub.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser {Name = Input.Name, UserName = Input.Email, Email = Input.Email};
+                var user = new ApplicationUser
+                {
+                    Name = Input.Name,
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    Weight = Input.Weight,
+                    Height = Input.Height
+                };
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
